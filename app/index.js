@@ -66,6 +66,27 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('jshintrc', '.jshintrc');
     },
 
+    scripts: function () {
+      this.copy('src/index.jsx', 'src/index.jsx');
+    },
+
+    html: function () {
+      this.template('src/index.html', 'src/index.html');
+    },
+
+    styles: function () {
+      this.copy('src/index.less', 'src/index.less');
+      this.copy('tasks/styles.js', 'tasks/styles.js');
+    },
+
+    dist: function () {
+      this.copy('tasks/dist.js', 'tasks/dist.js');
+    },
+
+    watch: function () {
+      this.copy('tasks/watch.js', 'tasks/watch.js');
+    },
+
     webpack: function () {
       this.copy('webpack.config.js', 'webpack.config.js');
       this.copy('tasks/webpack.js', 'tasks/webpack.js');
@@ -78,11 +99,11 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     gulp: function () {
-      this.props.defaultTasks = ['watch-test'];
+      this.props.defaultTasks = "['watch']";
       this.template('gulpfile.js', 'gulpfile.js');
-      this.template('tasks/config.js', 'tasks/config.js');
-      this.template('tasks/html.js', 'tasks/html.js');
-      this.template('tasks/clean.js', 'tasks/clean.js');
+      this.copy('tasks/config.js', 'tasks/config.js');
+      this.copy('tasks/html.js', 'tasks/html.js');
+      this.copy('tasks/clean.js', 'tasks/clean.js');
     },
 
     tests: function () {

@@ -13,15 +13,20 @@ var config = {
     port: 8080,
   },
   scripts: {
+    entry: path.join(rootDir, 'src/index.jsx'),
     path: path.join(rootDir, 'src/**/*.js'),
-    entry: 'index.jsx',
     bundleName: 'bundle.js'
+  },
+  styles: {
+    entry: path.join(rootDir, 'src/index.less'),
+    path: path.join(rootDir, 'src/**/*.less'),
+    bundleName: 'bundle.css'
   },
   source: {
     path: path.join(rootDir, 'src'),
   },
   html: {
-    entry: 'index.html',
+    entry: path.join(rootDir, 'src/index.html'),
   },
   dist: {
     path: path.join(rootDir, 'dist')

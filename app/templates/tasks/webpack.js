@@ -20,11 +20,11 @@ gulp.task('webpack', ['html'], function (callback) {
 });
 
 gulp.task('webpack-dev-server', ['html'], function (callback) {
-  var config = webpackConfig;
-  config.watch = true;
+  var wpConfig = webpackConfig;
+  wpConfig.watch = true;
 
   // Start a webpack-dev-server
-  var compiler = webpack(config);
+  var compiler = webpack(wpConfig);
 
   new WebpackDevServer(compiler, {
     //hot: true,
