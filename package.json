@@ -1,6 +1,6 @@
 {
   "name": "generator-big-starter",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Yeoman generator starter app for BIG",
   "license": "MIT",
   "main": "app/index.js",
