@@ -3,4 +3,4 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-big-react-component' ]; then cd .. && eval "mv $currentfolder generator-big-react-component" && cd generator-big-react-component; fi
+  - if [ "$currentfolder" != 'generator-big-starter' ]; then cd .. && eval "mv $currentfolder generator-big-starter" && cd generator-big-starter; fi
