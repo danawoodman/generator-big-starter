@@ -1,0 +1,13 @@
+{
+  "name": "<%= props.appname %>",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    <% if (props.gulp) { %>"gulp": "^3.8.10",
+    "gulp-util": "^3.0.2",
+    "require-dir": "^0.1.0",<% } %>
+    <% if (props.tests) { %>"gulp-mocha": "^2.0.0",
+    "should": "^4.6.1",<% } %>
+    "dotenv": "^0.4.0"
+  }
+}

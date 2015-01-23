@@ -1,0 +1,42 @@
+{
+  "name": "generator-big-starter",
+  "version": "0.0.0",
+  "description": "Yeoman generator starter app for BIG",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "builtbybig/generator-big-starter",
+  "author": {
+    "name": "Dana Woodman",
+    "email": "dana@danawoodman.com",
+    "url": "https://github.com/danawoodman"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "BIG",
+    "starter",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-mocha": "^2.0.0",
+    "gulp-util": "^3.0.2",
+    "mocha": "*",
+    "require-dir": "^0.1.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}

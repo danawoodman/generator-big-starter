@@ -1,0 +1,15 @@
+{
+  "name": "<%= props.appname %>",
+  "version": "0.0.0",
+  "homepage": "https://github.com/<%= props.repo %>",
+  "authors": [
+    "<%= props.author %>"
+  ],
+  "description": "<%= props.description %>",
+  "main": "index.html",
+  "license": "Copyright <%= props.author %>",
+  "private": <%= props.private %>,
+  "version": "0.0.0",
+  "dependencies": {}
+}
+
