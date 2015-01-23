@@ -1,4 +1,4 @@
-# generator-big-starter [![Build Status](https://secure.travis-ci.org/builtbybig/generator-big-starter.png?branch=master)](https://travis-ci.org/builtbybig/generator-big-starter)
+# generator-big-starter [![Build Status](https://secure.travis-ci.org/BuiltByBig/generator-big-starter.png?branch=master)](https://travis-ci.org/BuiltByBig/generator-big-starter)
 
 > [Yeoman](http://yeoman.io) generator
 
