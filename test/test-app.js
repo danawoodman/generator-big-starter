@@ -16,7 +16,7 @@ describe('big-starter:app', function () {
       .on('end', done);
   });
 
-  it('creates files', function () {
+  it('configures base project files', function () {
     assert.file([
       // Dotfiles:
       '.gitignore',
@@ -26,6 +26,9 @@ describe('big-starter:app', function () {
       // Package files:
       'bower.json',
       'package.json',
+
+      // Build directory
+      'dist/'
     ]);
   });
 
@@ -41,7 +44,7 @@ describe('big-starter:app', function () {
       'tasks/test.js',
       'test/app-test.js'
     ]);
-    assert.fileContent('gulpfile.js', /watch/);
+    assert.fileContent('gulpfile.js', /watch-test/);
     assert.fileContent('package.json', /gulp-mocha/);
     assert.fileContent('package.json', /should/);
     assert.fileContent('tasks/test.js', /tests\.testsPath/);
@@ -52,12 +55,22 @@ describe('big-starter:app', function () {
   it('configures gulp', function () {
     assert.file([
       'gulpfile.js',
-      'tasks/config.js'
+      'tasks/config.js',
+      'tasks/html.js',
+      'tasks/clean.js'
     ]);
     assert.fileContent('gulpfile.js', /watch/);
     assert.fileContent('package.json', /gulp/);
     assert.fileContent('package.json', /gulp-util/);
     assert.fileContent('package.json', /require-dir/);
+  });
+
+  it('configures WebPack', function () {
+    assert.file([
+      'webpack.config.js',
+      'tasks/webpack.js',
+    ]);
+    //assert.fileContent('bower.json', /Starter/);
   });
 
   it('configures Bower', function () {

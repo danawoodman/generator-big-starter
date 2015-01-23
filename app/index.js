@@ -1,4 +1,5 @@
 'use strict';
+
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
@@ -16,12 +17,6 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the ' + chalk.red('BIG Starter') + ' generator!'
     ));
 
-    // TODO:
-    // - WebPack?
-    // - Server?
-    // - Bootstrap?
-    // - FontAwesome?
-    // - Test suite
     var prompts = [
       {
         name: 'appname',
@@ -48,25 +43,11 @@ module.exports = yeoman.generators.Base.extend({
         name: 'private',
         message: 'Make this project private?',
         default: true
-      },
-      {
-        type: 'confirm',
-        name: 'tests',
-        message: 'Test suite?',
-        default: true
-      },
-      // TODO: Don't show this option if the test suite is chosen as it is redundant.
-      {
-        type: 'confirm',
-        name: 'gulp',
-        message: 'Do you want to use Gulp?',
-        default: true
       }
     ];
 
     this.prompt(prompts, function (props) {
       this.props = props;
-
       done();
     }.bind(this));
   },
@@ -75,6 +56,7 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
       this.template('_package.json', 'package.json');
       this.template('_bower.json', 'bower.json');
+      this.mkdir('dist');
     },
 
     projectfiles: function () {
@@ -82,27 +64,30 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('editorconfig', '.editorconfig');
       this.copy('gitignore', '.gitignore');
       this.copy('jshintrc', '.jshintrc');
+    },
 
-      // Configure test suite.
-      if (this.props.tests) {
-        this.props.defaultTask = 'watch-test';
-        this.copy('tasks/test.js', 'tasks/test.js');
-        this.copy('test/app-test.js', 'test/app-test.js');
-      }
+    webpack: function () {
+      this.copy('webpack.config.js', 'webpack.config.js');
+      this.copy('tasks/webpack.js', 'tasks/webpack.js');
+    },
 
-      // Use gulp either if it is chosen or if a
-      // test suite will be setup.
-      if (this.props.gulp || this.props.tests) {
-        // If no tasks are setup, create a simple
-        // hello world task as an example.
-        if (!this.props.defaultTask) {
-          this.props.defaultTask = 'hello';
-          this.copy('tasks/hello.js', 'tasks/hello.js');
-        }
+    bootstrap: function () {
+      // Bootstrap
+      // react-bootstrap
+      // font-awesome
+    },
 
-        this.template('gulpfile.js', 'gulpfile.js');
-        this.template('tasks/config.js', 'tasks/config.js');
-      }
+    gulp: function () {
+      this.props.defaultTasks = ['watch-test'];
+      this.template('gulpfile.js', 'gulpfile.js');
+      this.template('tasks/config.js', 'tasks/config.js');
+      this.template('tasks/html.js', 'tasks/html.js');
+      this.template('tasks/clean.js', 'tasks/clean.js');
+    },
+
+    tests: function () {
+      this.copy('tasks/test.js', 'tasks/test.js');
+      this.copy('test/app-test.js', 'test/app-test.js');
     }
   },
 
