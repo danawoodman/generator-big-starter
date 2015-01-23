@@ -75,6 +75,23 @@ describe('big-starter:app', function () {
     ]);
   });
 
+  it('configure fb-flo', function () {
+    assert.file([
+      'flo.js',
+      'tasks/flo.js'
+    ]);
+    assert.fileContent('package.json', /fb-flo/);
+    assert.fileContent('tasks/watch.js', /flo/);
+  });
+
+  it('configure serve task', function () {
+    assert.file([
+      'tasks/serve.js'
+    ]);
+    assert.fileContent('gulpfile.js', /'serve'/);
+    assert.fileContent('package.json', /gulp-serve/);
+  });
+
   it('configures test suite', function () {
     assert.file([
       'tasks/test.js',

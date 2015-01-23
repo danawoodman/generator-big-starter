@@ -87,6 +87,15 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('tasks/watch.js', 'tasks/watch.js');
     },
 
+    serve: function () {
+      this.copy('tasks/serve.js', 'tasks/serve.js');
+    },
+
+    flo: function () {
+      this.copy('flo.js', 'flo.js');
+      this.copy('tasks/flo.js', 'tasks/flo.js');
+    },
+
     webpack: function () {
       this.copy('webpack.config.js', 'webpack.config.js');
       this.copy('tasks/webpack.js', 'tasks/webpack.js');
@@ -99,7 +108,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     gulp: function () {
-      this.props.defaultTasks = "['watch']";
+      this.props.defaultTasks = "['watch', 'serve']";
       this.template('gulpfile.js', 'gulpfile.js');
       this.copy('tasks/config.js', 'tasks/config.js');
       this.copy('tasks/html.js', 'tasks/html.js');

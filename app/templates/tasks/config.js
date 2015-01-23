@@ -9,12 +9,9 @@ var config = {
       path.join(rootDir, 'src/**/*.js')
     ]
   },
-  webpack: {
-    port: 8080,
-  },
   scripts: {
     entry: path.join(rootDir, 'src/index.jsx'),
-    path: path.join(rootDir, 'src/**/*.js'),
+    path: path.join(rootDir, 'src/**/*.{js,jsx}'),
     bundleName: 'bundle.js'
   },
   styles: {
@@ -27,6 +24,9 @@ var config = {
   },
   html: {
     entry: path.join(rootDir, 'src/index.html'),
+  },
+  flo: {
+    port: 8888,
   },
   dist: {
     path: path.join(rootDir, 'dist')
