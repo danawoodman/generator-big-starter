@@ -89,7 +89,6 @@ describe('big-starter:app', function () {
     assert.file([
       'tasks/serve.js'
     ]);
-    assert.fileContent('gulpfile.js', /'serve'/);
     assert.fileContent('package.json', /gulp-serve/);
   });
 

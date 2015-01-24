@@ -115,7 +115,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     gulp: function () {
-      this.props.defaultTasks = "['watch', 'serve']";
+      this.props.defaultTasks = "['watch']";
       this.template('gulpfile.js', 'gulpfile.js');
       this.copy('tasks/config.js', 'tasks/config.js');
       this.copy('tasks/html.js', 'tasks/html.js');
