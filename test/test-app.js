@@ -30,6 +30,7 @@ describe('big-starter:app', function () {
       // Build directory
       'dist/'
     ]);
+    assert.fileContent('package.json', /starter-project/);
   });
 
   it('sets up scripts', function () {

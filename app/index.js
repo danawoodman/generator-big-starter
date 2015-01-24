@@ -1,6 +1,7 @@
 'use strict';
 
 var yeoman = require('yeoman-generator');
+var slug = require('slug');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
@@ -21,7 +22,7 @@ module.exports = yeoman.generators.Base.extend({
       {
         name: 'appname',
         message: 'What do you want to call this application?',
-        default: 'Starter'
+        default: 'Starter Project'
       },
       {
         name: 'author',
@@ -48,6 +49,12 @@ module.exports = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.props = props;
+
+      // Set the slug
+      if (props.appname) {
+        this.props.appslug = slug(props.appname).toLowerCase();
+      }
+
       done();
     }.bind(this));
   },
