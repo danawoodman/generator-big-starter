@@ -6,7 +6,7 @@ var config = {
     testsPath: path.join(rootDir, 'test/**/*.js'),
     watchPath: [
       path.join(rootDir, 'test/**/*.js'),
-      path.join(rootDir, 'src/**/*.js')
+      path.join(rootDir, 'src/**/*.{js,jsx}')
     ]
   },
   scripts: {
