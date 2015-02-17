@@ -74,16 +74,16 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     scripts: function () {
-      this.copy('src/index.jsx', 'src/index.jsx');
-      this.copy('src/world.jsx', 'src/world.jsx');
+      this.copy('src/frontend/index.jsx', 'src/frontend/index.jsx');
+      this.copy('src/frontend/world.jsx', 'src/frontend/world.jsx');
     },
 
     html: function () {
-      this.template('src/index.html', 'src/index.html');
+      this.template('src/frontend/index.html', 'src/frontend/index.html');
     },
 
     styles: function () {
-      this.copy('src/index.less', 'src/index.less');
+      this.copy('src/frontend/index.less', 'src/frontend/index.less');
     },
 
     flo: function () {
