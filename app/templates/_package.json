@@ -18,7 +18,7 @@
     "watch:html": "./node_modules/watchy/bin/watchy -w ./src/frontend/index.html -- npm run build:html",
     "watch:fonts": "./node_modules/watchy/bin/watchy -w ./src/frontend/fonts/ -- npm run build:fonts",
     "watch": "./node_modules/parallelshell/index.js 'npm run webpack:dev' 'npm run build:scripts' 'npm run watch:test' 'npm run watch:styles' 'npm run watch:html' 'npm run watch:fonts' 'npm run fb-flo'",
-    "webpack:dev": "webpack-dev-server --config webpack.config.js --hot --progress --colors --port 7777 "
+    "webpack:dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js --hot --progress --colors --port 7777 "
   },
   "dependencies": {
     "lodash": "^2.4.1",
