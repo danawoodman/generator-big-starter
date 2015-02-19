@@ -1,16 +1,15 @@
 var flo = require('fb-flo');
 var path  = require('path');
 var fs  = require('fs');
-var config  = require('./tasks/config');
+var rootDir = path.join(__dirname);
 
 var server = flo(
-  config.dist.path,
+  path.join(rootDir, 'dist'),
   {
-    port: config.flo.port,
+    port: 8888,
     host: 'localhost',
     verbose: false,
     glob: [
-      '**/*.js',
       '**/*.css',
       '**/*.html',
     ]
@@ -18,7 +17,7 @@ var server = flo(
   function resolver(filepath, callback) {
     console.log('Reloading \'' + filepath + '\' with flo...');
 
-    var file = path.join(config.dist.path, filepath);
+    var file = path.join(path.join(rootDir, 'dist'), filepath);
 
     callback({
       resourceURL: filepath,
